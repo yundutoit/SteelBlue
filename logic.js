@@ -1,24 +1,18 @@
 var wordPool = ["apple", "bat", "door", "eggplant", "fork", "gate", "house", "ice", "jar", "kite", "lamp", "moon", "notebook", "orange", "pencil", "quilt", "robot", "socks", "tree", "umbrella", "vase", "window", "xylophone", "yellow", "zipper"]
 var playerKey = "";
 var keyPressed = "";
+var lives = 3;
+var score = 0;
+var totalGuess = "";
 var currentWord = wordPool[Math.floor(Math.random()*wordPool.length)];
-console.log(currentWord);
+// console.log(currentWord);
 //JQuery to detect a keypress
-$(document).keypress(function(event){
-    // Check if the key pressed is a letter.
+window.addEventListener("keyup", function(event){
     if (event.keyCode >= 65 && event.keyCode <= 90) {
         // Converts all key clicks to lowercase letters.
         playerKey = event.key.toLowerCase();
-		//adds guessed letter to the total guess
-		document.getElementById("word").innerHTML = playerKey; 
+        //adds guessed letter to the total guess
+		totalGuess = totalGuess+ "" +playerKey;
         }
-    //when keycode = 13 the user pressed the enter key
-    // if(even.keycode == '13'){
-    //         if (userGuess == currentword){
-    //             console.log("correct");
-    //         }
-    //         else{
-    //             console.log("wrong");
-    //         }
-    //     }
-    });
+        document.getElementById("word").innerHTML = totalGuess; 
+},false)
