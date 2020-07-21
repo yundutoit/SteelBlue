@@ -1,0 +1,1 @@
+var wordPool = ["cat", "profound", "zanny", ""]
