@@ -3,6 +3,7 @@ var playerKey = "";
 var keyPressed = "";
 var lives = 3;
 var score = 0;
+var totalGuess;
 var currentWord = wordPool[Math.floor(Math.random()*wordPool.length)];
 // console.log(currentWord);
 //JQuery to detect a keypress
@@ -11,6 +12,7 @@ window.addEventListener("keyup", function(event){
         // Converts all key clicks to lowercase letters.
         playerKey = event.key.toLowerCase();
         //adds guessed letter to the total guess
-		document.getElementById("word").innerHTML = playerKey; 
+		totalGuess = totalGuess+ "" +playerKey;
         }
+        document.getElementById("word").innerHTML = totalGuess; 
 },false)
