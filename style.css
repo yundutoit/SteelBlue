@@ -17,4 +17,16 @@
     width: 500px;
     background-color: green;
 }
+#score{
+    color: white;
+}
+#life{
+    color: white;
+}
+#neededWord{
+    color: white;
+}
+#word{
+    color: white;
+}
 
