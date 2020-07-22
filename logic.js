@@ -21,7 +21,9 @@ document.getElementById("word").innerHTML = totalGuess;
 //shows the computer generated 
 document.getElementById("neededWord").innerHTML = currentWord;
 //displays score
-document.getElementById("score").innerHTML = score;
+document.getElementById("score").innerHTML = "score: " + score;
+//displays life
+document.getElementById("life").innerHTML = "lives: " + lives;
 //Listens for a key press
 window.addEventListener("keyup", function(event){
     
@@ -45,7 +47,9 @@ window.addEventListener("keyup", function(event){
             currentWord = wordPool[Math.floor(Math.random()*wordPool.length)]; 
             //adds to score
             score++;
+            document.getElementsByClassName("enemy")[0].style.setProperty("top", 0);
             distance = 0;
+        
             
     }
         }
@@ -56,6 +60,8 @@ window.addEventListener("keyup", function(event){
             //shows the computer generated 
             document.getElementById("neededWord").innerHTML = currentWord;
             //displays score
-            document.getElementById("score").innerHTML = score;
+            document.getElementById("score").innerHTML = "score: " + score;
+            //displays life
+            document.getElementById("life").innerHTML = "lives: " + lives;    
 },false)
 });
