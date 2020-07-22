@@ -13,12 +13,13 @@ var distance = 20;
 
 var timer = setInterval(myTimer, 1000);
 function myTimer() {
-distance= distance + 10;
+distance= distance + 40;
 document.getElementsByClassName("enemy")[0].style.setProperty("top", distance + "px");
 }
+
 //Listens for a key press
 window.addEventListener("keyup", function(event){
-
+    
     //makes sure the key pressed is a letter
     if (event.keyCode >= 65 && event.keyCode <= 90) {
         // Converts all key clicks to lowercase letters.
