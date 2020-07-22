@@ -1,0 +1,62 @@
+h1 {
+    color: yellow;
+    text-align: center;
+    font-size: 60px;
+    font-family: "Advent Pro", serif;
+
+}
+
+h2 {
+    color: yellow;
+    font-size: 40px; 
+
+}
+
+.homepage {
+    background-color: black;
+}
+
+
+.playbox {
+    border-style: solid;
+    border-color: yellow;
+    margin: 5px;
+    padding: 5px;
+    padding-top: 0px;
+    
+}
+
+h3 {
+    color: yellow;
+}
+
+a {
+    color: yellow;
+}
+
+p {
+    color: yellow;
+}
+
+li {
+    color: yellow;
+}
+
+.htptext {
+    font-size: 24px;
+}
+
+.button {
+    background-color: black;
+    border-style: solid;
+    color: yellow;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
+
+  .buttonlocation {
+      text-align: center;
+  }
