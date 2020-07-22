@@ -4,12 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TypeBattle</title>
+    <link rel="stylesheet" href="style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 </head>
 <body>
-    <div id = "score"></div>
-    <div id= "neededWord">
+    <div id = "gameField"> 
+        <div id = "score"></div>
+
+        <div class="enemy"> 
+
+            <div id= "neededWord">
+
+            </div>
+
+            <div id = "ufo">
+                <img height = "50" width = "50" src="ufo.png" alt="ufo">
+            </div>
+        </div>
+
+    </div>
+    
+    
 
     </div>
     <div id="userGuess">
@@ -18,3 +34,4 @@
     <div id="word"></div>
     <script type = "text/javascript" src = "logic.js"></script>
 </body>
+</html>>

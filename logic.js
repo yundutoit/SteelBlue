@@ -1,3 +1,5 @@
+
+$(document).ready(function(){
 var wordPool = ["apple", "bat", "door", "eggplant", "fork", "gate", "house", "ice", "jar", "kite", "lamp", "moon", "notebook", "orange", "pencil", "quilt", "robot", "socks", "tree", "umbrella", "vase", "window", "xylophone", "yellow", "zipper"]
 var playerKey = "";
 var keyPressed = "";
@@ -8,11 +10,18 @@ var totalGuess = "";
 var totalGuess= "";
 
 var currentWord = wordPool[Math.floor(Math.random()*wordPool.length)];
+var distance = 20;
 // to detect a keypress
 //Shows the currentword
 
+setInterval(myTimer, 1000);
+function myTimer() {
+distance= distance + 10;
+document.getElementById("ufo").style.setProperty("top", distance);
+}
 //Listens for a key press
 window.addEventListener("keyup", function(event){
+
     //makes sure the key pressed is a letter
     if (event.keyCode >= 65 && event.keyCode <= 90) {
         // Converts all key clicks to lowercase letters.
@@ -34,11 +43,18 @@ window.addEventListener("keyup", function(event){
             //adds to score
             score++;
         }
-        //displays the total guess to the screen
-        document.getElementById("word").innerHTML = totalGuess; 
-        document.getElementById("neededWord").innerHTML = currentWord;
-        document.getElementById("score").innerHTML = score;
+
     }
+            //displays correct user input to the screen
+            document.getElementById("word").innerHTML = totalGuess; 
+            //shows the computer generated 
+            document.getElementById("neededWord").innerHTML = currentWord;
+            //displays score
+            document.getElementById("score").innerHTML = score;
 },false)
+<<<<<<< HEAD
 
  
+=======
+});
+>>>>>>> 277a1fd5a4485f1792eeb3d1d058522408ca9277
