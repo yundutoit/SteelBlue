@@ -14,10 +14,14 @@ var distance = 20;
 // to detect a keypress
 //Shows the currentword
 
-setInterval(myTimer, 1000);
-function myTimer() {
-distance= distance + 10;
-document.getElementById("ufo").style.setProperty("top", distance);
+// setInterval(myTimer, 1000);
+// function myTimer() {
+// distance= distance + 10;
+// document.getElementById("ufo").style.setProperty("top", distance);
+$("button").click(function(){
+    $("p").slideDown();
+  });
+  
 }
 //Listens for a key press
 window.addEventListener("keyup", function(event){
@@ -52,9 +56,8 @@ window.addEventListener("keyup", function(event){
             //displays score
             document.getElementById("score").innerHTML = score;
 },false)
-<<<<<<< HEAD
+
 
  
-=======
 });
->>>>>>> 277a1fd5a4485f1792eeb3d1d058522408ca9277
+
