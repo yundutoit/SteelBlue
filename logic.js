@@ -12,13 +12,19 @@ var distance = 20;
 //Shows the currentword
 
 var timer = setInterval(myTimer, 1000);
-function myTimer() {
-distance= distance + 10;
-document.getElementsByClassName("enemy")[0].style.setProperty("top", distance + "px");
-}
+    function myTimer() {
+    distance= distance + 10;
+    document.getElementsByClassName("enemy")[0].style.setProperty("top", distance + "px");
+    }
+//displays correct user input to the screen
+document.getElementById("word").innerHTML = totalGuess; 
+//shows the computer generated 
+document.getElementById("neededWord").innerHTML = currentWord;
+//displays score
+document.getElementById("score").innerHTML = score;
 //Listens for a key press
 window.addEventListener("keyup", function(event){
-
+    
     //makes sure the key pressed is a letter
     if (event.keyCode >= 65 && event.keyCode <= 90) {
         // Converts all key clicks to lowercase letters.
@@ -39,9 +45,12 @@ window.addEventListener("keyup", function(event){
             currentWord = wordPool[Math.floor(Math.random()*wordPool.length)]; 
             //adds to score
             score++;
+            distance = 0;
+            
+    }
         }
 
-    }
+    
             //displays correct user input to the screen
             document.getElementById("word").innerHTML = totalGuess; 
             //shows the computer generated 
