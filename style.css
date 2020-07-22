@@ -8,3 +8,10 @@
     left: 200px;
     top: 20px;
 }
+#ground{
+    position: absolute;
+    bottom: 0px;
+    height: 100px;
+    width: 500px;
+    background-color: green;
+}
