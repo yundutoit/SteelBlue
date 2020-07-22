@@ -11,10 +11,10 @@ var distance = 20;
 // to detect a keypress
 //Shows the currentword
 
-setInterval(myTimer, 1000);
+var timer = setInterval(myTimer, 1000);
 function myTimer() {
 distance= distance + 10;
-document.getElementById("ufo").style.setProperty("top", distance);
+document.getElementsByClassName("enemy")[0].style.setProperty("top", distance + "px");
 }
 //Listens for a key press
 window.addEventListener("keyup", function(event){
