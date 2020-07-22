@@ -11,8 +11,21 @@
 }
 #ground{
     position: absolute;
-    bottom: 0px;
+    top: 500px;
     height: 100px;
     width: 500px;
     background-color: green;
 }
+#score{
+    color: white;
+}
+#life{
+    color: white;
+}
+#neededWord{
+    color: white;
+}
+#word{
+    color: white;
+}
+
