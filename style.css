@@ -1,7 +1,8 @@
 #gameField{
     width: 500px;
     height: 500px;
-    background-color: aqua;
+    background-image: url("space.gif");
+
 }
 .enemy{
     position: absolute;
@@ -10,8 +11,9 @@
 }
 #ground{
     position: absolute;
-    bottom: 0px;
+    top: 500px;
     height: 100px;
     width: 500px;
     background-color: green;
 }
+
