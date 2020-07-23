@@ -32,7 +32,7 @@ $(document).ready(function(){
         }
         function Redirect() {
             window.location = "homepage.html";
-            alert("Good job! You have defended " + score + " waves of aliens!")
+            alert("Good job! You have successfully defended " + score + " waves of aliens!")
          }
     }
 

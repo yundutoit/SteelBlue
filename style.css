@@ -6,6 +6,7 @@
     position: absolute;
     left: 50%;
     margin-left: -250px;
+    margin-top: 10px;
 
 }
 .enemy{
@@ -41,5 +42,8 @@
     font-family: fantasy;
     text-align: center;
     margin-top: 10px;
+    color: white;
 }
-
+body{
+    background-image: url("aliens.jpg");
+}
