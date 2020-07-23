@@ -18,7 +18,7 @@ $(document).ready(function(){
     
     
     //displays correct user input to the screen
-    document.getElementById("word").innerHTML = totalGuess; 
+    document.getElementById("word").innerHTML = "Your Guess: " + totalGuess; 
     //shows the computer generated 
     document.getElementById("neededWord").innerHTML = currentWord;
     //displays score
@@ -42,8 +42,8 @@ $(document).ready(function(){
                 }
             //sees if user has completed the word
             if(totalGuess === currentWord){
-                //resets user guess
-                totalGuess = "";
+                //setTimeout pauses for a little bit so user can see full word resets user guess
+                setTimeout(() => { totalGuess = ""; }, 500);
                 //picks a new word
                 currentWord = wordPool[Math.floor(Math.random()*wordPool.length)]; 
                 //adds to score
@@ -57,7 +57,7 @@ $(document).ready(function(){
     
         
                 //displays correct user input to the screen
-                document.getElementById("word").innerHTML = totalGuess; 
+                document.getElementById("word").innerHTML = "Your Guess: " + totalGuess; 
                 //shows the computer generated 
                 document.getElementById("neededWord").innerHTML = currentWord;
                 //displays score
@@ -66,3 +66,4 @@ $(document).ready(function(){
                 document.getElementById("life").innerHTML = "lives: " + lives;    
     },false)
     });
+
