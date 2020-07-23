@@ -7,7 +7,7 @@ $(document).ready(function(){
     var totalGuess= "";
     var currentWord = wordPool[Math.floor(Math.random()*wordPool.length)];
     var distance = 20;
-    var increment = .1
+    var increment = 0.1;
     var intervalTime = 10
     // to detect a keypress
     //Shows the currentword
@@ -69,7 +69,7 @@ $(document).ready(function(){
                 score++;
                 document.getElementsByClassName("enemy")[0].style.setProperty("top", 0);
                 distance = 0;
-                increment=increment*1.5;
+                increment=increment*1.2;
         }
             }
     
