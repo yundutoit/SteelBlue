@@ -4,47 +4,72 @@ $(document).ready(function(){
     var keyPressed = "";
     var lives = 3;
     var score = 0;
+    //Place holder untill user starts typing
     var totalGuess= "";
+    //generates a random word from wordPool
     var currentWord = wordPool[Math.floor(Math.random()*wordPool.length)];
-    var distance = 20;
+    //distance movese the position of enemy
+    var distance = 0;
+    //how much we increase the speed by
     var increment = .1
+    //how often in milliseconds we use the timer
     var intervalTime = 5;
-    // to detect a keypress
-    //Shows the currentword
+    
+
+
+    //Declaring a timmer that activates every 5 milliseconds 
     var timer = setInterval(myTimer,intervalTime );
+        //myTimmer runs every 5 milliseconds
         function myTimer() {
+        //increases the distance by increment
         distance= distance + increment;
+        //changes the position of the enemy (includes text) when the new distance is the top
         document.getElementsByClassName("enemy")[0].style.setProperty("top", distance + "px");
+        //when the distance is high enough to push enemy to bottom of the map 
         if(distance>=350){
+            //stop the current timer
             clearInterval(timer)
+            //take away a life
             lives--;
+            //reset distance
             distance = 0;
+            //move enemy back to the top
             document.getElementsByClassName("enemy")[0].style.setProperty("top", 0);
+            //reset the timer
             timer = setInterval(myTimer, intervalTime);
-            //displays life
+            //displays lives
             document.getElementById("life").innerHTML = "lives: " + lives;
+            //resets current word
             currentWord = wordPool[Math.floor(Math.random()*wordPool.length)];
+            //Pauses then clears totalGuess
             setTimeout(() => { totalGuess = ""; document.getElementById("word").innerHTML = "Your Guess: " + totalGuess;}, 100);
+            //Updates the displayed Guess on the screen
             document.getElementById("neededWord").innerHTML = currentWord;
+            //When lives = 0
             if(lives==0){
+                //send back to homepage
                 Redirect();
             }
         }
+        
         function Redirect() {
+            //Brings user back to the homepage
             window.location = "homepage.html";
          }
     }
 
-    
-    //displays correct user input to the screen
-    document.getElementById("word").innerHTML = "Your Guess: " + totalGuess; 
-    //shows the computer generated 
-    document.getElementById("neededWord").innerHTML = currentWord;
-    //displays score
-    document.getElementById("score").innerHTML = "score: " + score;
-    //displays life
-    document.getElementById("life").innerHTML = "lives: " + lives;
-    //Listens for a key press
+    //UPDATES SCREEN
+        //displays correct user input to the screen
+        document.getElementById("word").innerHTML = "Your Guess: " + totalGuess; 
+        //shows the computer generated 
+        document.getElementById("neededWord").innerHTML = currentWord;
+        //displays score
+        document.getElementById("score").innerHTML = "score: " + score;
+        //displays life
+        document.getElementById("life").innerHTML = "lives: " + lives;
+
+
+        //Listens for a key press
     window.addEventListener("keyup", function(event){
         
         //makes sure the key pressed is a letter
@@ -67,13 +92,16 @@ $(document).ready(function(){
                 currentWord = wordPool[Math.floor(Math.random()*wordPool.length)]; 
                 //adds to score
                 score++;
+                //brings enemy back to top of page
                 document.getElementsByClassName("enemy")[0].style.setProperty("top", 0);
+                //resets enemy movement var
                 distance = 0;
+                //increases the rate enemies come
                 increment=increment*1.1;
         }
             }
     
-        
+        //UPDATES SCREEN
                 //displays correct user input to the screen
                 document.getElementById("word").innerHTML = "Your Guess: " + totalGuess; 
                 //shows the computer generated 
