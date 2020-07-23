@@ -84,4 +84,3 @@ $(document).ready(function(){
                 document.getElementById("life").innerHTML = "lives: " + lives;    
     },false)
     });
-
