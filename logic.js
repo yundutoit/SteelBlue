@@ -7,13 +7,15 @@ $(document).ready(function(){
     var totalGuess= "";
     var currentWord = wordPool[Math.floor(Math.random()*wordPool.length)];
     var distance = 20;
+    var increment = 10;
     // to detect a keypress
     //Shows the currentword
     
     var timer = setInterval(myTimer, 1000);
         function myTimer() {
-        distance= distance + 10;
+        distance= distance + increment;
         document.getElementsByClassName("enemy")[0].style.setProperty("top", distance + "px");
+        
         }
     
     
@@ -43,13 +45,14 @@ $(document).ready(function(){
             //sees if user has completed the word
             if(totalGuess === currentWord){
                 //setTimeout pauses for a little bit so user can see full word resets user guess
-                setTimeout(() => { totalGuess = ""; }, 500);
+                setTimeout(() => { totalGuess = ""; }, 100);
                 //picks a new word
                 currentWord = wordPool[Math.floor(Math.random()*wordPool.length)]; 
                 //adds to score
                 score++;
                 document.getElementsByClassName("enemy")[0].style.setProperty("top", 0);
                 distance = 0;
+                increment = increment*1.5;
             
                 
         }
