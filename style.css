@@ -16,4 +16,6 @@
     width: 500px;
     background-color: green;
 }
-
+#word, #neededWord, #score{
+    color: antiquewhite;
+}
