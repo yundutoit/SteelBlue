@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    var wordPool = ["apple", "bat", "door", "eggplant", "fork", "gate", "house", "ice", "jar", "kite", "lamp", "moon", "notebook", "orange", "pencil", "quilt", "robot", "socks", "tree", "umbrella", "vase", "window", "xylophone", "yellow", "zipper"]
+    var wordPool = ["apple", "bat", "cobweb", "door", "eggplant", "fork", "gate", "house", "ice", "jar", "kite", "lamp", "moon", "notebook", "orange", "pencil", "quilt", "robot", "socks", "tree", "umbrella", "vase", "window", "xylophone", "yellow", "zipper"]
     var playerKey = "";
     var keyPressed = "";
     var lives = 3;
@@ -8,11 +8,11 @@ $(document).ready(function(){
     var totalGuess= "";
     //generates a random word from wordPool
     var currentWord = wordPool[Math.floor(Math.random()*wordPool.length)];
-    //distance movese the position of enemy
+    //pushes the enemy down
     var distance = 0;
-    //how much we increase the speed by
-    var increment = .1
-    //how often in milliseconds we use the timer
+    //how much we increase distance by
+    var increment = 0.1;
+    //how often in milliseconds the time will go off
     var intervalTime = 5;
     
 
@@ -25,9 +25,7 @@ $(document).ready(function(){
         distance= distance + increment;
         //changes the position of the enemy (includes text) when the new distance is the top
         document.getElementsByClassName("enemy")[0].style.setProperty("top", distance + "px");
-        //when the distance is high enough to push enemy to bottom of the map 
-        if(distance>=350){
-            //stop the current timer
+        if(distance>=425){
             clearInterval(timer)
             //take away a life
             lives--;
@@ -55,6 +53,7 @@ $(document).ready(function(){
         function Redirect() {
             //Brings user back to the homepage
             window.location = "homepage.html";
+            alert("Good job! You have defended " + score + " waves of aliens!")
          }
     }
 

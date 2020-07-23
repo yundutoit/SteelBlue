@@ -37,4 +37,9 @@
 #userGuess{
     color: white;
 }
+#gameName{
+    font-family: fantasy;
+    text-align: center;
+    margin-top: 10px;
+}
 
