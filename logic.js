@@ -1,4 +1,3 @@
-
 $(document).ready(function(){
     var wordPool = ["apple", "bat", "door", "eggplant", "fork", "gate", "house", "ice", "jar", "kite", "lamp", "moon", "notebook", "orange", "pencil", "quilt", "robot", "socks", "tree", "umbrella", "vase", "window", "xylophone", "yellow", "zipper"]
     var playerKey = "";
@@ -8,20 +7,26 @@ $(document).ready(function(){
     var totalGuess= "";
     var currentWord = wordPool[Math.floor(Math.random()*wordPool.length)];
     var distance = 20;
+    var increment = 10;
     // to detect a keypress
     //Shows the currentword
     
     var timer = setInterval(myTimer, 1000);
         function myTimer() {
-        distance= distance + 10;
+        distance= distance + increment;
         document.getElementsByClassName("enemy")[0].style.setProperty("top", distance + "px");
+        
         }
+    
+    
     //displays correct user input to the screen
-    document.getElementById("word").innerHTML = totalGuess; 
+    document.getElementById("word").innerHTML = "Your Guess: " + totalGuess; 
     //shows the computer generated 
     document.getElementById("neededWord").innerHTML = currentWord;
     //displays score
-    document.getElementById("score").innerHTML = score;
+    document.getElementById("score").innerHTML = "score: " + score;
+    //displays life
+    document.getElementById("life").innerHTML = "lives: " + lives;
     //Listens for a key press
     window.addEventListener("keyup", function(event){
         
@@ -39,23 +44,28 @@ $(document).ready(function(){
                 }
             //sees if user has completed the word
             if(totalGuess === currentWord){
-                //resets user guess
-                totalGuess = "";
+                //setTimeout pauses for a little bit so user can see full word resets user guess
+                setTimeout(() => { totalGuess = ""; }, 100);
                 //picks a new word
                 currentWord = wordPool[Math.floor(Math.random()*wordPool.length)]; 
                 //adds to score
                 score++;
+                document.getElementsByClassName("enemy")[0].style.setProperty("top", 0);
                 distance = 0;
+                increment = increment*1.5;
+            
                 
         }
             }
     
         
                 //displays correct user input to the screen
-                document.getElementById("word").innerHTML = totalGuess; 
+                document.getElementById("word").innerHTML = "Your Guess: " + totalGuess; 
                 //shows the computer generated 
                 document.getElementById("neededWord").innerHTML = currentWord;
                 //displays score
-                document.getElementById("score").innerHTML = score;
+                document.getElementById("score").innerHTML = "score: " + score;
+                //displays life
+                document.getElementById("life").innerHTML = "lives: " + lives;    
     },false)
     });

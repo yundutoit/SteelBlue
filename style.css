@@ -1,4 +1,5 @@
 #gameField{
+    float: left;
     width: 500px;
     height: 500px;
     background-image: url("space.gif");
@@ -16,6 +17,21 @@
     width: 500px;
     background-color: green;
 }
-#word, #neededWord, #score{
-    color: antiquewhite;
+
+#score{
+    color: white;
 }
+#life{
+    color: white;
+}
+#neededWord{
+    color: white;
+}
+#word{
+    color: white;
+}
+
+#userGuess{
+    color: white;
+}
+
