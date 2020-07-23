@@ -7,17 +7,34 @@ $(document).ready(function(){
     var totalGuess= "";
     var currentWord = wordPool[Math.floor(Math.random()*wordPool.length)];
     var distance = 20;
-    var increment = 10;
+    var increment = .1
+    var intervalTime = 10
     // to detect a keypress
     //Shows the currentword
-    
-    var timer = setInterval(myTimer, 1000);
+    var timer = setInterval(myTimer,intervalTime );
         function myTimer() {
         distance= distance + increment;
         document.getElementsByClassName("enemy")[0].style.setProperty("top", distance + "px");
-        
+        if(distance>=350){
+            clearInterval(timer)
+            lives--;
+            distance = 0;
+            document.getElementsByClassName("enemy")[0].style.setProperty("top", 0);
+            timer = setInterval(myTimer, intervalTime);
+            //displays life
+            document.getElementById("life").innerHTML = "lives: " + lives;
+            currentWord = wordPool[Math.floor(Math.random()*wordPool.length)];
+            setTimeout(() => { totalGuess = ""; document.getElementById("word").innerHTML = "Your Guess: " + totalGuess;}, 100);
+            document.getElementById("neededWord").innerHTML = currentWord;
+            if(lives==0){
+                Redirect();
+            }
         }
-    
+        function Redirect() {
+            window.location = "homepage.html";
+         }
+    }
+
     
     //displays correct user input to the screen
     document.getElementById("word").innerHTML = "Your Guess: " + totalGuess; 
@@ -45,16 +62,14 @@ $(document).ready(function(){
             //sees if user has completed the word
             if(totalGuess === currentWord){
                 //setTimeout pauses for a little bit so user can see full word resets user guess
-                setTimeout(() => { totalGuess = ""; }, 100);
+                setTimeout(() => { totalGuess = ""; document.getElementById("word").innerHTML = "Your Guess: " + totalGuess;}, 100);
                 //picks a new word
                 currentWord = wordPool[Math.floor(Math.random()*wordPool.length)]; 
                 //adds to score
                 score++;
                 document.getElementsByClassName("enemy")[0].style.setProperty("top", 0);
                 distance = 0;
-                increment = increment*1.5;
-            
-                
+                increment=increment*1.5;
         }
             }
     
