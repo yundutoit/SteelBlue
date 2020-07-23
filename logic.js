@@ -69,7 +69,7 @@ $(document).ready(function(){
                 score++;
                 document.getElementsByClassName("enemy")[0].style.setProperty("top", 0);
                 distance = 0;
-                increment=increment*1.5;
+                increment=increment*1.2;
         }
             }
     
@@ -84,4 +84,3 @@ $(document).ready(function(){
                 document.getElementById("life").innerHTML = "lives: " + lives;    
     },false)
     });
-
