@@ -6,7 +6,7 @@ $(document).ready(function(){
     var score = 0;
     var totalGuess= "";
     var currentWord = wordPool[Math.floor(Math.random()*wordPool.length)];
-    var distance = 20;
+    var distance = 0;
     var increment = 0.1;
     var intervalTime = 10
     // to detect a keypress
@@ -15,7 +15,7 @@ $(document).ready(function(){
         function myTimer() {
         distance= distance + increment;
         document.getElementsByClassName("enemy")[0].style.setProperty("top", distance + "px");
-        if(distance>=350){
+        if(distance>=425){
             clearInterval(timer)
             lives--;
             distance = 0;
@@ -32,6 +32,7 @@ $(document).ready(function(){
         }
         function Redirect() {
             window.location = "homepage.html";
+            alert("Good job! You have defended " + score + " waves of aliens!")
          }
     }
 
